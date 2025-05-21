@@ -17,7 +17,8 @@ kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
 ktor = "3.1.3"
 logback = "1.5.18"
-zxing = "3.5.1"
+qrcodekotlin = "3.8.0"
+qrcodekotlin = "3.8.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -36,8 +37,7 @@ logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 ktor-serverCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-serverNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
 ktor-serverTestHost = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor" }
-zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
-zxing-javase = { module = "com.google.zxing:javase", version.ref = "zxing" }
+qrcode-kotlin = { module = "io.github.g0dkar:qrcode-kotlin", version.ref = "qrcodekotlin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
