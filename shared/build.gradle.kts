@@ -43,6 +43,9 @@ kotlin {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
         }
+        jvmMain.dependencies {
+            implementation(libs.zxing.core)
+        }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
