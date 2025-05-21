@@ -12,8 +12,8 @@ class SharedCommonTest {
 
     @Test
     fun qrCodeGeneration_size() {
-        val matrix = QrCodeService().generate("test")
-        assertEquals(SIMPLE_QR_SIZE, matrix.size)
-        assertEquals(SIMPLE_QR_SIZE, matrix.first().size)
+        val qr = QrCodeService().generate("test")
+        assertEquals(SIMPLE_QR_SIZE, qr.matrix.size)
+        assertEquals(SIMPLE_QR_SIZE, qr.matrix.first().size)
     }
 }

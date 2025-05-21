@@ -2,7 +2,7 @@ package org.githut.kmp.qr
 
 internal const val SIMPLE_QR_SIZE = 21
 
-internal fun generateSimpleMatrix(data: String): List<List<Boolean>> {
+internal fun generateSimpleMatrix(data: String): LogicQrCode {
     val bytes = data.encodeToByteArray()
     val result = MutableList(SIMPLE_QR_SIZE) { MutableList(SIMPLE_QR_SIZE) { false } }
     var bitIndex = 0
@@ -17,5 +17,5 @@ internal fun generateSimpleMatrix(data: String): List<List<Boolean>> {
         }
         if (bitIndex >= SIMPLE_QR_SIZE * SIMPLE_QR_SIZE) break
     }
-    return result
+    return LogicQrCode(result)
 }

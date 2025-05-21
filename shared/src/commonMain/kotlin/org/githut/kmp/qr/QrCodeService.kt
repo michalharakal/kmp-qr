@@ -5,5 +5,5 @@ package org.githut.kmp.qr
  * The resulting matrix contains `true` for a black pixel and `false` for a white pixel.
  */
 expect class QrCodeService() {
-    fun generate(data: String): List<List<Boolean>>
+    fun generate(data: String): LogicQrCode
 }
