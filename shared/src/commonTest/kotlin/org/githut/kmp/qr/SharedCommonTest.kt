@@ -9,4 +9,11 @@ class SharedCommonTest {
     fun example() {
         assertEquals(3, 1 + 2)
     }
+
+    @Test
+    fun qrCodeGeneration_size() {
+        val matrix = QrCodeService().generate("test")
+        assertEquals(SIMPLE_QR_SIZE, matrix.size)
+        assertEquals(SIMPLE_QR_SIZE, matrix.first().size)
+    }
 }
