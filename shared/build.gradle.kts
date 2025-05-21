@@ -41,7 +41,10 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.qrcode.kotlin)
+        }
+        jvmMain.dependencies {
+            // JVM uses the common implementation
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
