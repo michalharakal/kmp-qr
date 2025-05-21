@@ -25,24 +25,23 @@ If you face any issues, please report them on [YouTrack](https://youtrack.jetbra
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
 
-## ZXing QR Code Example
+## QR Code Example
 
-The server module contains a Java utility for creating QR code images using the
-[ZXing](https://github.com/zxing/zxing) library. Include the following
-dependencies in your Gradle build:
+The project uses the
+[qrcode-kotlin](https://github.com/g0dkar/qrcode-kotlin) library to generate QR
+codes on all platforms. Include the following dependency in your Gradle build:
 
 ```kotlin
-implementation(libs.zxing.core)
-implementation(libs.zxing.javase)
+implementation(libs.qrcode.kotlin)
 ```
 
-The `QrCodeService` in the `jvm` source set also relies on ZXing to produce a
-`LogicQrCode` instance representing the QR matrix.
+The `QrCodeService` delegates QR code creation to this library and returns a
+`LogicQrCode` instance representing the resulting matrix.
 
 You can then generate a PNG file with:
 
-```java
-try (FileOutputStream out = new FileOutputStream("qr.png")) {
-    ZxingQrGenerator.writeQrToStream("hello world", 300, out);
+```kotlin
+FileOutputStream("qr.png").use { out ->
+    QrGenerator.writeQrToStream("hello world", 300, out)
 }
 ```
